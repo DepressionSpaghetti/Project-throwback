@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 00a318b3da5cba847823c6f976abb7c1
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 261169
+  packageName: SOLDIER PACK
+  packageVersion: 1.0
+  assetPath: Assets/Soldier/Materials/SoldierUSBase/holster.mat
+  uploadId: 613825

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5fc1a33443cfb344bb4437de82e529db
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 261169
+  packageName: SOLDIER PACK
+  packageVersion: 1.0
+  assetPath: Assets/Soldier/Materials/SoldierUSBase/camera.mat
+  uploadId: 613825

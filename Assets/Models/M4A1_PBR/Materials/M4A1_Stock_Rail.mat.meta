@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 94b89a74d36974b4baf82c003488c6ed
+timeCreated: 1489678129
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 85713
+  packageName: M4A1 PBR
+  packageVersion: 1.1
+  assetPath: Assets/M4A1_PBR/Materials/M4A1_Stock_Rail.mat
+  uploadId: 173505

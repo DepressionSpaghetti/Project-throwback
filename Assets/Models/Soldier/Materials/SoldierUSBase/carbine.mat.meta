@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cd62675d998a5224b851d5fdbf60e303
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 261169
+  packageName: SOLDIER PACK
+  packageVersion: 1.0
+  assetPath: Assets/Soldier/Materials/SoldierUSBase/carbine.mat
+  uploadId: 613825

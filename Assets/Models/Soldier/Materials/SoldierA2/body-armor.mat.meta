@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c0cede49f501a8e48b99466aaf312e14
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 261169
+  packageName: SOLDIER PACK
+  packageVersion: 1.0
+  assetPath: Assets/Soldier/Materials/SoldierA2/body-armor.mat
+  uploadId: 613825

@@ -1,0 +1,196 @@
+{
+    "format": {
+        "version": "1.0"
+    },
+    "scene": {
+        "scale_factor": 1009.2003173828125
+    },
+    "shaders": {
+        "Main shader": {
+            "displacementTessellation": {
+                "displacement": {
+                    "scale": 0,
+                    "source_channel": 0
+                },
+                "enable": true,
+                "tessellation": {
+                    "max_length": 64,
+                    "subdiv_count": 1,
+                    "subdiv_mode": 0
+                }
+            },
+            "parameters": {
+                "Base Surface": {
+                    "anisotropyEnabled": false,
+                    "specularEdgeColorEnabled": false,
+                    "specularIoR": 1.5
+                },
+                "Coat": {
+                    "coatEnabled": false,
+                    "coatIoR": 1.600000023841858
+                },
+                "Common Parameters": {
+                    "ao_intensity": 0.75,
+                    "emissive_intensity": 1,
+                    "horizonFade": 1.2999999523162842,
+                    "nbSamples": 16
+                },
+                "Parallax Occlusion Mapping": {
+                    "maxPOMSamples": 16,
+                    "minPOMSamples": 4,
+                    "pomStrength": 1,
+                    "usePOM": false
+                },
+                "Sheen": {
+                    "sheenEnabled": false
+                },
+                "Subsurface Scattering Parameters": {
+                    "sssColor": [
+                        0.7009999752044678,
+                        0.3009999990463257,
+                        0.3050000071525574
+                    ],
+                    "sssEnabled": true,
+                    "sssRayleigh": 0,
+                    "sssRedShift": 0,
+                    "sssScale": 0.5,
+                    "sssScatteringColorSource": 0,
+                    "sssType": 2
+                }
+            },
+            "shader": "asm-metal-rough",
+            "shaderInstance": "Main shader"
+        }
+    },
+    "texturesets": {
+        "22": {
+            "shader": "Main shader"
+        },
+        "Eye_material": {
+            "shader": "Main shader"
+        },
+        "Material": {
+            "shader": "Main shader"
+        },
+        "akum": {
+            "shader": "Main shader"
+        },
+        "antana": {
+            "shader": "Main shader"
+        },
+        "arms": {
+            "shader": "Main shader"
+        },
+        "azov": {
+            "shader": "Main shader"
+        },
+        "batareyka": {
+            "shader": "Main shader"
+        },
+        "belt": {
+            "shader": "Main shader"
+        },
+        "boots": {
+            "shader": "Main shader"
+        },
+        "bronik": {
+            "shader": "Main shader"
+        },
+        "camera": {
+            "shader": "Main shader"
+        },
+        "fonar": {
+            "shader": "Main shader"
+        },
+        "garniture": {
+            "shader": "Main shader"
+        },
+        "glock": {
+            "shader": "Main shader"
+        },
+        "glove": {
+            "shader": "Main shader"
+        },
+        "gofra": {
+            "shader": "Main shader"
+        },
+        "head": {
+            "shader": "Main shader"
+        },
+        "headphone": {
+            "shader": "Main shader"
+        },
+        "helmet": {
+            "shader": "Main shader"
+        },
+        "karabine": {
+            "shader": "Main shader"
+        },
+        "karmanghoust": {
+            "shader": "Main shader"
+        },
+        "karmanmagaz": {
+            "shader": "Main shader"
+        },
+        "kit": {
+            "shader": "Main shader"
+        },
+        "kobur": {
+            "shader": "Main shader"
+        },
+        "koburkoleno": {
+            "shader": "Main shader"
+        },
+        "kopyto": {
+            "shader": "Main shader"
+        },
+        "magaz": {
+            "shader": "Main shader"
+        },
+        "mask": {
+            "shader": "Main shader"
+        },
+        "meshok": {
+            "shader": "Main shader"
+        },
+        "mikrofone": {
+            "shader": "Main shader"
+        },
+        "nighvizion": {
+            "shader": "Main shader"
+        },
+        "pants": {
+            "shader": "Main shader"
+        },
+        "portphel": {
+            "shader": "Main shader"
+        },
+        "racio": {
+            "shader": "Main shader"
+        },
+        "shnyr": {
+            "shader": "Main shader"
+        },
+        "skull": {
+            "shader": "Main shader"
+        },
+        "sumka1": {
+            "shader": "Main shader"
+        },
+        "sumka2": {
+            "shader": "Main shader"
+        },
+        "sumka3": {
+            "shader": "Main shader"
+        },
+        "sumkaracio": {
+            "shader": "Main shader"
+        },
+        "tactic": {
+            "shader": "Main shader"
+        },
+        "watch": {
+            "shader": "Main shader"
+        }
+    }
+}

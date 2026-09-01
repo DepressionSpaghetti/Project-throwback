@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6998a40f5ee111d478023bb894e7b6fb
+timeCreated: 1489678130
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 85713
+  packageName: M4A1 PBR
+  packageVersion: 1.1
+  assetPath: Assets/M4A1_PBR/Materials/M4A1_Common.mat
+  uploadId: 173505
