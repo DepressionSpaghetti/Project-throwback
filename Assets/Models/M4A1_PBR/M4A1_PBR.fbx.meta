@@ -1,163 +1,551 @@
 fileFormatVersion: 2
 guid: bb17bb05ddca39941ae82f6297532e62
-timeCreated: 1491915025
-licenseType: Store
+AssetOrigin:
+  serializedVersion: 1
+  productId: 85713
+  packageName: M4A1 PBR
+  packageVersion: 1.1
+  assetPath: Assets/M4A1_PBR/M4A1_PBR.fbx
+  uploadId: 173505
 ModelImporter:
-  serializedVersion: 19
-  fileIDToRecycleName:
-    100000: Bolt
-    100002: Bolt_end
-    100004: Button
-    100006: Button_end
-    100008: DustCover
-    100010: DustCover_end
-    100012: Gun
-    100014: Handle
-    100016: Handle_end
-    100018: M4A1
-    100020: M4A1_Barrel
-    100022: M4A1_Bolt
-    100024: M4A1_BoltFwdAsst
-    100026: M4A1_DustCover
-    100028: M4A1_FrontSight
-    100030: M4A1_Grip
-    100032: M4A1_Handguard
-    100034: M4A1_Handguard_m
-    100036: M4A1_Handle
-    100038: M4A1_Magazine
-    100040: M4A1_MagCatch
-    100042: M4A1_RearSight
-    100044: M4A1_Receiver
-    100046: //RootNode
-    100048: M4A1_Stock
-    100050: Magazine
-    100052: Magazine_end
-    100054: MagCatch
-    100056: MagCatch_end
-    100058: Selector
-    100060: Selector_end
-    100062: Stock
-    100064: Stock_end
-    100066: Trigger
-    100068: Trigger_end
-    400000: Bolt
-    400002: Bolt_end
-    400004: Button
-    400006: Button_end
-    400008: DustCover
-    400010: DustCover_end
-    400012: Gun
-    400014: Handle
-    400016: Handle_end
-    400018: M4A1
-    400020: M4A1_Barrel
-    400022: M4A1_Bolt
-    400024: M4A1_BoltFwdAsst
-    400026: M4A1_DustCover
-    400028: M4A1_FrontSight
-    400030: M4A1_Grip
-    400032: M4A1_Handguard
-    400034: M4A1_Handguard_m
-    400036: M4A1_Handle
-    400038: M4A1_Magazine
-    400040: M4A1_MagCatch
-    400042: M4A1_RearSight
-    400044: M4A1_Receiver
-    400046: //RootNode
-    400048: M4A1_Stock
-    400050: Magazine
-    400052: Magazine_end
-    400054: MagCatch
-    400056: MagCatch_end
-    400058: Selector
-    400060: Selector_end
-    400062: Stock
-    400064: Stock_end
-    400066: Trigger
-    400068: Trigger_end
-    4300000: M4A1_Handguard_m
-    4300002: M4A1_Barrel
-    4300004: M4A1_Bolt
-    4300006: M4A1_BoltFwdAsst
-    4300008: M4A1_DustCover
-    4300010: M4A1_FrontSight
-    4300012: M4A1_Grip
-    4300014: M4A1_Handguard
-    4300016: M4A1_Handle
-    4300018: M4A1_MagCatch
-    4300020: M4A1_Magazine
-    4300022: M4A1_RearSight
-    4300024: M4A1_Receiver
-    4300026: M4A1_Stock
-    7400000: M4A1|Bolt_Fire
-    7400002: M4A1|BoltClosed
-    7400004: M4A1|BoltOpen
-    7400006: M4A1|DustCoverClosed
-    7400008: M4A1|DustCoverOpen
-    9500000: //RootNode
-    13700000: M4A1_Barrel
-    13700002: M4A1_Bolt
-    13700004: M4A1_BoltFwdAsst
-    13700006: M4A1_DustCover
-    13700008: M4A1_FrontSight
-    13700010: M4A1_Grip
-    13700012: M4A1_Handguard
-    13700014: M4A1_Handguard_m
-    13700016: M4A1_Handle
-    13700018: M4A1_Magazine
-    13700020: M4A1_MagCatch
-    13700022: M4A1_RearSight
-    13700024: M4A1_Receiver
-    13700026: M4A1_Stock
+  serializedVersion: 24200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Bolt
+  - first:
+      1: 100002
+    second: Bolt_end
+  - first:
+      1: 100004
+    second: Button
+  - first:
+      1: 100006
+    second: Button_end
+  - first:
+      1: 100008
+    second: DustCover
+  - first:
+      1: 100010
+    second: DustCover_end
+  - first:
+      1: 100012
+    second: Gun
+  - first:
+      1: 100014
+    second: Handle
+  - first:
+      1: 100016
+    second: Handle_end
+  - first:
+      1: 100018
+    second: M4A1
+  - first:
+      1: 100020
+    second: M4A1_Barrel
+  - first:
+      1: 100022
+    second: M4A1_Bolt
+  - first:
+      1: 100024
+    second: M4A1_BoltFwdAsst
+  - first:
+      1: 100026
+    second: M4A1_DustCover
+  - first:
+      1: 100028
+    second: M4A1_FrontSight
+  - first:
+      1: 100030
+    second: M4A1_Grip
+  - first:
+      1: 100032
+    second: M4A1_Handguard
+  - first:
+      1: 100034
+    second: M4A1_Handguard_m
+  - first:
+      1: 100036
+    second: M4A1_Handle
+  - first:
+      1: 100038
+    second: M4A1_Magazine
+  - first:
+      1: 100040
+    second: M4A1_MagCatch
+  - first:
+      1: 100042
+    second: M4A1_RearSight
+  - first:
+      1: 100044
+    second: M4A1_Receiver
+  - first:
+      1: 100046
+    second: //RootNode
+  - first:
+      1: 100048
+    second: M4A1_Stock
+  - first:
+      1: 100050
+    second: Magazine
+  - first:
+      1: 100052
+    second: Magazine_end
+  - first:
+      1: 100054
+    second: MagCatch
+  - first:
+      1: 100056
+    second: MagCatch_end
+  - first:
+      1: 100058
+    second: Selector
+  - first:
+      1: 100060
+    second: Selector_end
+  - first:
+      1: 100062
+    second: Stock
+  - first:
+      1: 100064
+    second: Stock_end
+  - first:
+      1: 100066
+    second: Trigger
+  - first:
+      1: 100068
+    second: Trigger_end
+  - first:
+      4: 400000
+    second: Bolt
+  - first:
+      4: 400002
+    second: Bolt_end
+  - first:
+      4: 400004
+    second: Button
+  - first:
+      4: 400006
+    second: Button_end
+  - first:
+      4: 400008
+    second: DustCover
+  - first:
+      4: 400010
+    second: DustCover_end
+  - first:
+      4: 400012
+    second: Gun
+  - first:
+      4: 400014
+    second: Handle
+  - first:
+      4: 400016
+    second: Handle_end
+  - first:
+      4: 400018
+    second: M4A1
+  - first:
+      4: 400020
+    second: M4A1_Barrel
+  - first:
+      4: 400022
+    second: M4A1_Bolt
+  - first:
+      4: 400024
+    second: M4A1_BoltFwdAsst
+  - first:
+      4: 400026
+    second: M4A1_DustCover
+  - first:
+      4: 400028
+    second: M4A1_FrontSight
+  - first:
+      4: 400030
+    second: M4A1_Grip
+  - first:
+      4: 400032
+    second: M4A1_Handguard
+  - first:
+      4: 400034
+    second: M4A1_Handguard_m
+  - first:
+      4: 400036
+    second: M4A1_Handle
+  - first:
+      4: 400038
+    second: M4A1_Magazine
+  - first:
+      4: 400040
+    second: M4A1_MagCatch
+  - first:
+      4: 400042
+    second: M4A1_RearSight
+  - first:
+      4: 400044
+    second: M4A1_Receiver
+  - first:
+      4: 400046
+    second: //RootNode
+  - first:
+      4: 400048
+    second: M4A1_Stock
+  - first:
+      4: 400050
+    second: Magazine
+  - first:
+      4: 400052
+    second: Magazine_end
+  - first:
+      4: 400054
+    second: MagCatch
+  - first:
+      4: 400056
+    second: MagCatch_end
+  - first:
+      4: 400058
+    second: Selector
+  - first:
+      4: 400060
+    second: Selector_end
+  - first:
+      4: 400062
+    second: Stock
+  - first:
+      4: 400064
+    second: Stock_end
+  - first:
+      4: 400066
+    second: Trigger
+  - first:
+      4: 400068
+    second: Trigger_end
+  - first:
+      43: 4300000
+    second: M4A1_Handguard_m
+  - first:
+      43: 4300002
+    second: M4A1_Barrel
+  - first:
+      43: 4300004
+    second: M4A1_Bolt
+  - first:
+      43: 4300006
+    second: M4A1_BoltFwdAsst
+  - first:
+      43: 4300008
+    second: M4A1_DustCover
+  - first:
+      43: 4300010
+    second: M4A1_FrontSight
+  - first:
+      43: 4300012
+    second: M4A1_Grip
+  - first:
+      43: 4300014
+    second: M4A1_Handguard
+  - first:
+      43: 4300016
+    second: M4A1_Handle
+  - first:
+      43: 4300018
+    second: M4A1_MagCatch
+  - first:
+      43: 4300020
+    second: M4A1_Magazine
+  - first:
+      43: 4300022
+    second: M4A1_RearSight
+  - first:
+      43: 4300024
+    second: M4A1_Receiver
+  - first:
+      43: 4300026
+    second: M4A1_Stock
+  - first:
+      74: 7400000
+    second: M4A1|Bolt_Fire
+  - first:
+      74: 7400002
+    second: M4A1|BoltClosed
+  - first:
+      74: 7400004
+    second: M4A1|BoltOpen
+  - first:
+      74: 7400006
+    second: M4A1|DustCoverClosed
+  - first:
+      74: 7400008
+    second: M4A1|DustCoverOpen
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: M4A1_Barrel
+  - first:
+      137: 13700002
+    second: M4A1_Bolt
+  - first:
+      137: 13700004
+    second: M4A1_BoltFwdAsst
+  - first:
+      137: 13700006
+    second: M4A1_DustCover
+  - first:
+      137: 13700008
+    second: M4A1_FrontSight
+  - first:
+      137: 13700010
+    second: M4A1_Grip
+  - first:
+      137: 13700012
+    second: M4A1_Handguard
+  - first:
+      137: 13700014
+    second: M4A1_Handguard_m
+  - first:
+      137: 13700016
+    second: M4A1_Handle
+  - first:
+      137: 13700018
+    second: M4A1_Magazine
+  - first:
+      137: 13700020
+    second: M4A1_MagCatch
+  - first:
+      137: 13700022
+    second: M4A1_RearSight
+  - first:
+      137: 13700024
+    second: M4A1_Receiver
+  - first:
+      137: 13700026
+    second: M4A1_Stock
+  externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: M4A1|Bolt_Fire
+      takeName: M4A1|Bolt_Fire
+      internalID: 7400000
+      firstFrame: 0
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: M4A1|BoltClosed
+      takeName: M4A1|BoltClosed
+      internalID: 7400002
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: M4A1|BoltOpen
+      takeName: M4A1|BoltOpen
+      internalID: 7400004
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: M4A1|DustCoverClosed
+      takeName: M4A1|DustCoverClosed
+      internalID: 7400006
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: M4A1|DustCoverOpen
+      takeName: M4A1|DustCoverOpen
+      internalID: 7400008
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 0.1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 0
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -167,22 +555,20 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 0.1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 85713
-  packageName: M4A1 PBR
-  packageVersion: 1.1
-  assetPath: Assets/M4A1_PBR/M4A1_PBR.fbx
-  uploadId: 173505

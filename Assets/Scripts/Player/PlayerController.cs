@@ -1,29 +1,49 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDamageable
 {
     public static PlayerController Instance { get; private set; }
 
     private Animator _playerAnimator;
+    private WeaponScript _weaponScript;
+    private BoneMagReload _reloadScript;
 
-    private float _movementInput;
+    private float _rotationInput;
+    private float _forwardInput;
     private bool _inBattle = false;
+    public bool InBattle => _inBattle;
+
+    //Player info
+    [Header("Player Info")]
+    [SerializeField] private float _maxHealth = 100f;
+    public float CurrentHealth { get; private set; }
+    public bool IsDead => CurrentHealth <= 0f;
 
     //Movement parameters
     [Header("Movement Parameters")]
     [Tooltip("The speed at which the player rotates.")]
     [SerializeField] private float _rotationSpeed = 10f;
 
+    public bool IsRecoilLocked { get; set; } = false;
+    
+
     //Targeting parameters
     [Header("Targeting Parameters")]
     [SerializeField] private GameObject _currentTarget;
     [SerializeField] private GameObject _targetingReticleUI;
+    [SerializeField] private bool isRecoilLocked;
 
     //IK
     [Header("IK Parameters")]
     [SerializeField] private Transform _smoothIKTarget;
     [SerializeField] private float _ikSmoothSpeed = 15f;
+    [SerializeField] private TwoBoneIKConstraint _handguard;
+    [SerializeField] private TwoBoneIKConstraint _reload;
+    [SerializeField] private float _smoothSpeedReload = 5f;
+
+
 
 
     private void Awake()
@@ -37,10 +57,16 @@ public class PlayerController : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
 
         _playerAnimator = GetComponent<Animator>();
+        _weaponScript = GetComponentInChildren<WeaponScript>();
+        _reloadScript = GetComponentInChildren<BoneMagReload>();
 
         ControlManager.Instance.Move += OnMove;
         ControlManager.Instance.Interact += OnInteract;
         ControlManager.Instance.SwitchEngageTarget += OnSwitchEngageTarget;
+        ControlManager.Instance.Reload += OnReload;
+
+        //
+        CurrentHealth = _maxHealth;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -52,7 +78,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RotateCharacter(_movementInput);
+        isRecoilLocked = IsRecoilLocked;
+
+        RotateCharacter(_rotationInput);
         RotateBattle();
 
     }
@@ -77,7 +105,8 @@ public class PlayerController : MonoBehaviour
     {
         if(_playerAnimator == null) return;
 
-        _movementInput = moveInput.x;
+        _rotationInput = moveInput.x;
+        _forwardInput = moveInput.y;
         switch (moveInput)
         {
             //directional movement
@@ -115,7 +144,7 @@ public class PlayerController : MonoBehaviour
             //    SetAnimatorParameters(forward: false, backward: true, turnLeft: true, turnRight: false);
             //    break;
             default:
-                _movementInput = 0;
+                _rotationInput = 0;
                 SetAnimatorParameters(forward: false, backward: false, turnLeft: false, turnRight: false);
                 break;
         }
@@ -125,6 +154,18 @@ public class PlayerController : MonoBehaviour
     {
         // Handle player interaction here
         Debug.Log("Player is interacting");
+    }
+
+    private void OnReload()
+    {
+        if(_weaponScript.AmmoCount < 30)
+            _playerAnimator.SetTrigger("Reload");
+    }
+
+    public void AnimatorReload()
+    {
+        _weaponScript.ReloadAmmo();
+        _weaponScript.SlapBolt();
     }
 
     private void OnSwitchEngageTarget()
@@ -145,6 +186,41 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnFireAuto(bool isFiring)
+    {
+        _playerAnimator.SetBool("fullAuto", isFiring);
+        
+    }
+
+    public void OnFireSingle()
+    {
+        _playerAnimator.SetTrigger("singleShot");
+    }
+
+    public void ResetRecoil() => _playerAnimator.ResetTrigger("singleShot");
+
+
+    public void TakeDamage(DamageInfo info)
+    {
+        if(IsDead) return;
+
+        CurrentHealth -= info.ammount;
+        Debug.Log($"Player took {info.ammount} damage. Current health: {CurrentHealth}");
+
+        //spawn imact effects, if time allows
+
+        if (IsDead)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        Debug.Log("Player has died.");
+        // Handle player death (e.g., play death animation, respawn, etc.)
+    }
+
     private void SwitchTargets()
     {
         _currentTarget = TargetManager.Instance.GetNextTarget(transform, _currentTarget);
@@ -163,6 +239,8 @@ public class PlayerController : MonoBehaviour
     {
         if(_inBattle)
         {
+            if (Mathf.Abs(_rotationInput) > 0.1f || Mathf.Abs(_forwardInput) > 0.1f) return;
+
             Vector3 DirectionToTarget = _currentTarget.transform.position - transform.position;
             DirectionToTarget.y = 0; // Keep the rotation only on the horizontal plane
 
@@ -189,17 +267,6 @@ public class PlayerController : MonoBehaviour
     {
         if(Mathf.Abs(_movementInput) > 0.1f)
             transform.Rotate(Vector3.up, _movementInput * _rotationSpeed * Time.deltaTime);
-        //if(_inBattle && _currentTarget != null)
-        //{
-        //    Vector3 directionToTarget = _currentTarget.transform.position - this.transform.position;
-        //    directionToTarget.y = 0; // Keep the rotation only on the horizontal plane
-        //    if (directionToTarget != Vector3.zero)
-        //    {
-        //        Quaternion targetRotation = Quaternion.LookRotation(directionToTarget);
-        //        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
-        //    }
-        //}
-
     }
 
     void SetAnimatorParameters(bool forward, bool backward, bool turnLeft, bool turnRight)
@@ -222,5 +289,15 @@ public class PlayerController : MonoBehaviour
                     _smoothIKTarget.position, forwardPosition, _ikSmoothSpeed * Time.deltaTime
                 );
         }
+    }
+
+    public void GrabMag()
+    {
+        _reloadScript.GrabMagWithHand();
+    }
+
+    public void ReleaseMag()
+    {
+        _reloadScript.ReleaseMagToWeapon();
     }
 }
