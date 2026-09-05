@@ -16,13 +16,13 @@ TagManager:
   - PlayerHitbox
   - ObjectCollisionCheck
   - 
-  - 
+  - Bullet
   - Reticle
   - Enemy
-  - 
-  - 
-  - 
-  - 
+  - Water
+  - InteractiveLayer
+  - Wall
+  - InvisibleBarrier
   - 
   - 
   - 

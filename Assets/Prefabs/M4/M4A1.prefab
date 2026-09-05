@@ -84,6 +84,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponScript
   firePoint: {fileID: 6087388071083177677}
+  ammoCount: 10
+  maxAmmoCount: 30
+  recoilDuration: 0.25
 --- !u!1 &4808690092139248585
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,13 +111,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4808690092139248585}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0.0925, z: -0.369}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2361734399473533098}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &6666435872708892882
 GameObject:
   m_ObjectHideFlags: 0

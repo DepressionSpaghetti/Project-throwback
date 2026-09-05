@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class WeaponScript : MonoBehaviour
 {
@@ -8,19 +10,19 @@ public class WeaponScript : MonoBehaviour
     [SerializeField] int maxAmmoCount = 30;
     
     [Header("Project Settings")]
-    [SerializeField] private float recoilDuration = 0.25f;
+    [SerializeField] private float singlerecoilDuration = 0.25f;
+    [SerializeField] private float autoRecoilDuration = 0.1f;
     private float _nextAllowedFireTime = 0f;
 
-    private ProjectileSpawner _spawner;
     private Animator _weaponAnimator;
     private bool _isFiringAuto;
+    private Coroutine _autoFireCoroutine;
 
     public int AmmoCount => ammoCount;
 
     void Awake()
     {
         _weaponAnimator = GetComponent<Animator>();
-        _spawner = GetComponent<ProjectileSpawner>();
         ControlManager.Instance.Attack1 += OnFireAuto;
         ControlManager.Instance.Attack2 += OnFireSingle;
     }
@@ -38,24 +40,34 @@ public class WeaponScript : MonoBehaviour
 
         if(ammoCount <= 0) return;
 
-        _nextAllowedFireTime = Time.time + recoilDuration;
+        _nextAllowedFireTime = Time.time + singlerecoilDuration;
 
         PlayerController.Instance.IsRecoilLocked = true;
 
         _weaponAnimator.SetTrigger("singleShot");
         PlayerController.Instance.OnFireSingle();
 
-        //_spawner.Fire(firePoint, gameObject);
+        if(ProjectileSpawner.Instance != null)
+            ProjectileSpawner.Instance.Fire(firePoint, gameObject);
     }
 
     private void OnFireAuto(bool isFiring)
     {
         if (!PlayerController.Instance.InBattle) return;
         
-        if(!isFiring)
+        _isFiringAuto = isFiring;
+
+        if (!isFiring)
         {
             _weaponAnimator.SetBool("fullAuto", false);
             PlayerController.Instance.OnFireAuto(false);
+
+            if(_autoFireCoroutine != null)
+            {
+                StopCoroutine(_autoFireCoroutine);
+                _autoFireCoroutine = null;
+            }
+
             return;
         }
         
@@ -67,8 +79,10 @@ public class WeaponScript : MonoBehaviour
 
         _weaponAnimator.SetBool("fullAuto", true);
         PlayerController.Instance.OnFireAuto(true);
-        //if(isFiring)
-            //_spawner.Fire(firePoint, gameObject);
+        if (ProjectileSpawner.Instance != null && _autoFireCoroutine == null)
+        {
+            _autoFireCoroutine = StartCoroutine(FireRoutine());
+        }
     }
 
     public void DepleteAmmo()
@@ -89,5 +103,19 @@ public class WeaponScript : MonoBehaviour
     public void UnlockBoltCycle()
     {
         PlayerController.Instance.IsRecoilLocked = false;
+    }
+
+    private IEnumerator FireRoutine()
+    {
+        while(_isFiringAuto && ammoCount > 0)
+        {
+            ProjectileSpawner.Instance.Fire(firePoint, gameObject);
+
+            yield return new WaitForSeconds(autoRecoilDuration);
+        }
+
+        _weaponAnimator.SetBool("fullAuto", false);
+        PlayerController.Instance.OnFireAuto(false);
+        _autoFireCoroutine = null;
     }
 }

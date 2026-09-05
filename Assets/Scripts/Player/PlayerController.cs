@@ -25,6 +25,9 @@ public class PlayerController : MonoBehaviour, IDamageable
     [Header("Movement Parameters")]
     [Tooltip("The speed at which the player rotates.")]
     [SerializeField] private float _rotationSpeed = 10f;
+    [SerializeField] private LayerMask _interactableLayer;
+    [SerializeField] private float _interactRange = 3f;
+
 
     public bool IsRecoilLocked { get; set; } = false;
     
@@ -60,13 +63,25 @@ public class PlayerController : MonoBehaviour, IDamageable
         _weaponScript = GetComponentInChildren<WeaponScript>();
         _reloadScript = GetComponentInChildren<BoneMagReload>();
 
+
+        //
+        CurrentHealth = _maxHealth;
+    }
+
+    private void OnEnable()
+    {
         ControlManager.Instance.Move += OnMove;
         ControlManager.Instance.Interact += OnInteract;
         ControlManager.Instance.SwitchEngageTarget += OnSwitchEngageTarget;
         ControlManager.Instance.Reload += OnReload;
+    }
 
-        //
-        CurrentHealth = _maxHealth;
+    private void OnDisable()
+    {
+        ControlManager.Instance.Move -= OnMove;
+        ControlManager.Instance.Interact -= OnInteract;
+        ControlManager.Instance.SwitchEngageTarget -= OnSwitchEngageTarget;
+        ControlManager.Instance.Reload -= OnReload;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -152,6 +167,15 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     private void OnInteract()
     {
+        Vector3 rayOrigin = transform.position + (Vector3.up * 1.5f);
+        Vector3 rayDirection = transform.forward;
+        Debug.DrawRay(rayOrigin, rayDirection * _interactRange, Color.red, 1f);
+
+        RaycastHit hit;
+        if(Physics.Raycast(rayOrigin, rayDirection, out hit, _interactRange, _interactableLayer, QueryTriggerInteraction.Collide))
+            if(hit.collider.TryGetComponent(out IInteractable interactable))
+                interactable.Interact();
+
         // Handle player interaction here
         Debug.Log("Player is interacting");
     }

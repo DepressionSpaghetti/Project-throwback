@@ -3,6 +3,8 @@ using UnityEngine.Pool;
 
 public class ProjectileSpawner : MonoBehaviour
 {
+    public static ProjectileSpawner Instance { get; private set; }
+
     [Header("Capacity")]
     [SerializeField] private int _defaultPoolCapacity = 20;
     [SerializeField] private int _maxPoolSize = 100;
@@ -12,15 +14,18 @@ public class ProjectileSpawner : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+
         _bulletPool = new ObjectPool<BulletHandler>(
-            createFunc: () => Instantiate(_projectilePrefab),
-            actionOnGet: (bullet) => bullet.gameObject.SetActive(true),
-            actionOnRelease: (bullet) => bullet.gameObject.SetActive(false),
-            actionOnDestroy: (bullet) => Destroy(bullet.gameObject),
-            collectionCheck: true,
-            defaultCapacity: _defaultPoolCapacity,
-            maxSize: _maxPoolSize
-        );
+                createFunc: () => Instantiate(_projectilePrefab),
+                actionOnGet: (bullet) => bullet.gameObject.SetActive(true),
+                actionOnRelease: (bullet) => bullet.gameObject.SetActive(false),
+                actionOnDestroy: (bullet) => Destroy(bullet.gameObject),
+                collectionCheck: true,
+                defaultCapacity: _defaultPoolCapacity,
+                maxSize: _maxPoolSize
+            );
     }
     
     public void Fire(Transform firePoint, GameObject shooter)
